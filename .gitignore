@@ -20,6 +20,9 @@
 *.mod
 *.smod
 
+# json
+*.json
+
 # Compiled Static libraries
 *.lai
 *.la
