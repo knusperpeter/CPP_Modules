@@ -225,7 +225,7 @@ int main(int ac, char **av){
 
 
 //	-	-	-	-	-	-	-	DEQUE	-	-	-	-	-	-	-	-	-	-	-	-
-
+		container.is_deque = true;
 		struct timeval start, end;
 		gettimeofday(&start, NULL);
 		if (container.deque.size() % 2 == 1){
@@ -236,6 +236,7 @@ int main(int ac, char **av){
 		container.deque = sort_deque(container, 0);
 		main_chain_deque(container);
 
+		container.is_deque = false;
 		gettimeofday(&end, NULL);
 		long seconds = end.tv_sec - start.tv_sec;
 		long microseconds = end.tv_usec - start.tv_usec;
@@ -267,9 +268,9 @@ int main(int ac, char **av){
 
 //	-	-	-	-	-	-	-	MONITORING	-	-	-	-	-	-	-	-	-	-	-	-	-
 
-	//	std::cout << "Container size: " << container.deque.size() << std::endl;
-	//	control_function(container);
-	//	std::cout << "Comparisons:" << comparisons << std::endl;
+		//std::cout << "Container size: " << container.deque.size() << std::endl;
+		//control_function(container);
+		//std::cout << "Comparisons:" << comparisons << std::endl;
 		std::cout << "Time to process " << container.deque.size() << " elements with std::deque:  " << duration << " us" << std::endl;
 		std::cout << "Time to process " << container.vector.size() << " elements with std::vector: " << duration_vector << " us" << std::endl;
 	} catch(std::exception& e){

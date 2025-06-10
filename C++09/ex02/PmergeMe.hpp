@@ -32,6 +32,7 @@ public:
 	std::vector<int> b_vector;
 	std::vector<int> rest_vector;
 	int uneven;
+	bool is_deque;
 
 
 	void print_deque(size_t csize, std::deque<int> deque);
@@ -44,5 +45,5 @@ public:
 
 	size_t jacobsthal(size_t n);
 	template<class Iterator>
-	static Iterator binary_search(Iterator begin, Iterator end, size_t n, size_t csize);
+	Iterator binary_search(Iterator begin, Iterator end, size_t n, size_t csize);
 };

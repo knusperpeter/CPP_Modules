@@ -138,7 +138,8 @@ Iterator PmergeMe::binary_search(Iterator begin, Iterator end, size_t n, size_t 
 		size_t mid_offset = ((dist / csize) / 2) * csize;
 
 		if (mid_offset == 0){
-			comparisons++;
+            if (is_deque == true)
+			    comparisons++;
 //			std::cout << BLUE << "Return condition: begin: " << YELLOW << *begin << BLUE << " end: " << YELLOW << *end << BLUE << ", n: " << YELLOW << int(n) << RESET << std::endl;
 			if (*begin > int(n))
 				return begin;
@@ -155,7 +156,8 @@ Iterator PmergeMe::binary_search(Iterator begin, Iterator end, size_t n, size_t 
 		}
 		else
 			begin = mid + csize;
-		comparisons++;
+		if (is_deque == true)
+			    comparisons++;
 	}
 	return found_larger ? last_valid : begin;
 }
